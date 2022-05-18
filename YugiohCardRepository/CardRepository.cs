@@ -58,49 +58,45 @@ public class CardRepository
             throw new ArgumentException("propertyName cannot be empty or null.", nameof(propertyName));
         }
 
-        IQueryable<Card> cardsQuery = _cards.AsQueryable().Where(c => c.CardType.Contains("Monster"));
-
-        var query2 = _cards.AsQueryable()
+        var cardsQuery = _cards.AsQueryable()
             .Select(c => new { card = c, numericalValue = c.GetPropertyValue<int?>(propertyName) })
             .Where(c => c.numericalValue.HasValue);
 
         switch (numberFilter.NumberOperator)
         {
             case NumberOperator.NotEqual:
-                cardsQuery = query2
+                return cardsQuery
                     .Where(c => c.numericalValue != numberFilter.RightOperand)
-                    .Select(c => c.card);
-                break;
+                    .Select(c => c.card)
+                    .ToList();
             case NumberOperator.Equal:
-                cardsQuery = query2
+                return cardsQuery
                     .Where(c => c.numericalValue == numberFilter.RightOperand)
-                    .Select(c => c.card);
-                break;
+                    .Select(c => c.card)
+                    .ToList();
             case NumberOperator.LessThan:
-                cardsQuery = query2
+                return cardsQuery
                     .Where(c => c.numericalValue < numberFilter.RightOperand)
-                    .Select(c => c.card);
-                break;
+                    .Select(c => c.card)
+                    .ToList();
             case NumberOperator.LessThanOrEqual:
-                cardsQuery = query2
+                return cardsQuery
                     .Where(c => c.numericalValue <= numberFilter.RightOperand)
-                    .Select(c => c.card);
-                break;
+                    .Select(c => c.card)
+                    .ToList();
             case NumberOperator.GreaterThan:
-                cardsQuery = query2
+                return cardsQuery
                     .Where(c => c.numericalValue > numberFilter.RightOperand)
-                    .Select(c => c.card);
-                break;
+                    .Select(c => c.card)
+                    .ToList();
             case NumberOperator.GreaterThanOrEqual:
-                cardsQuery = query2
+                return cardsQuery
                     .Where(c => c.numericalValue >= numberFilter.RightOperand)
-                    .Select(c => c.card);
-                break;
+                    .Select(c => c.card)
+                    .ToList();
             default:
                 throw new Exception("Invalid NumberOperator passed.");
         }
-
-        return cardsQuery.ToList();
     }
 
     private static bool WholeWordFunction(ReadOnlySpan<char> textToSearch, ReadOnlySpan<char> query, bool exactCase)

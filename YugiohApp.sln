@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1700.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YugiohCardRepository", "YugiohCardRepository\YugiohCardRepository.csproj", "{4C726D51-DDB8-431B-9C60-B42D92BEE4FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YugiohCardRepositoryTests", "YugiohCardRepositoryTests\YugiohCardRepositoryTests.csproj", "{C6D756E5-C0DD-442E-8CE4-1986C4BF3404}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4C726D51-DDB8-431B-9C60-B42D92BEE4FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C726D51-DDB8-431B-9C60-B42D92BEE4FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C726D51-DDB8-431B-9C60-B42D92BEE4FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6D756E5-C0DD-442E-8CE4-1986C4BF3404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6D756E5-C0DD-442E-8CE4-1986C4BF3404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6D756E5-C0DD-442E-8CE4-1986C4BF3404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6D756E5-C0DD-442E-8CE4-1986C4BF3404}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,7 +18,7 @@ namespace YugiohCardRepository.DTOs
         public int? AttackPoints { get; set; }
         [JsonPropertyName("def")]
         public int? DefensePoints { get; set; }
-        [JsonPropertyName("lvl")]
+        [JsonPropertyName("level")]
         public int? Level { get; set; }
         [JsonPropertyName("race")]
         public string? Race { get; set; }
